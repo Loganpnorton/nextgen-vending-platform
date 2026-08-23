@@ -1,0 +1,353 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* NextGen Vending Hub - Dark theme design system with neon accents */
+
+@layer base {
+  :root {
+    /* Light Theme Base Colors */
+    --background: 0 0% 100%;          /* Pure white background */
+    --foreground: 240 10% 4%;         /* Dark text */
+
+    --card: 0 0% 98%;                 /* Light card background */
+    --card-foreground: 240 10% 4%;
+
+    --popover: 0 0% 98%;
+    --popover-foreground: 240 10% 4%;
+
+    /* Blue Primary */
+    --primary: 217 91% 60%;           /* Blue #3B82F6 */
+    --primary-foreground: 0 0% 100%;
+
+    /* Light Secondary */
+    --secondary: 240 5% 96%;          /* Light gray for secondary elements */
+    --secondary-foreground: 240 10% 4%;
+
+    --muted: 240 5% 96%;              /* Muted light background */
+    --muted-foreground: 240 4% 46%;   /* Muted text */
+
+    /* Blue Accent */
+    --accent: 217 91% 60%;            /* Blue accent */
+    --accent-foreground: 0 0% 100%;
+
+    /* Status Colors */
+    --destructive: 0 84% 60%;         /* Red for errors */
+    --destructive-foreground: 0 0% 100%;
+    
+    --success: 142 76% 36%;           /* Green for success */
+    --success-foreground: 0 0% 100%;
+    
+    --warning: 45 93% 47%;            /* Yellow for warnings */
+    --warning-foreground: 240 10% 4%;
+
+    /* UI Elements */
+    --border: 240 6% 90%;             /* Light borders */
+    --input: 240 5% 96%;              /* Input backgrounds */
+    --ring: 217 91% 60%;              /* Focus ring - blue */
+
+    --radius: 0.75rem;                /* Rounded corners */
+
+    /* Custom Effects */
+    --neon-glow: 217 91% 60%;         /* Blue glow */
+    --glass-bg: 0 0% 98% / 0.8;       /* Glass effect background */
+    
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(217 91% 60%), hsl(217 91% 50%));
+    --gradient-dark: linear-gradient(135deg, hsl(240 5% 96%), hsl(240 5% 90%));
+    --gradient-glass: linear-gradient(135deg, hsl(0 0% 98% / 0.8), hsl(0 0% 96% / 0.6));
+
+    /* Shadows */
+    --shadow-neon: 0 0 20px hsl(217 91% 60% / 0.2);
+    --shadow-card: 0 4px 20px hsl(240 10% 2% / 0.1);
+    --shadow-elevated: 0 8px 30px hsl(240 10% 2% / 0.15);
+
+    /* Animations */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-fast: all 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    /* Dark Theme Base Colors */
+    --background: 240 10% 4%;          /* Deep dark background #0A0A0B */
+    --foreground: 210 40% 98%;         /* Near white text */
+
+    --card: 240 10% 6%;               /* Dark card background */
+    --card-foreground: 210 40% 98%;
+
+    --popover: 240 10% 6%;
+    --popover-foreground: 210 40% 98%;
+
+    /* Neon Blue Primary */
+    --primary: 195 100% 50%;          /* Neon blue #00D4FF */
+    --primary-foreground: 240 10% 4%;
+
+    /* Dark Secondary */
+    --secondary: 240 10% 12%;         /* Lighter dark for secondary elements */
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 240 10% 8%;              /* Muted dark background */
+    --muted-foreground: 215 20% 65%;  /* Muted text */
+
+    /* Neon Accent */
+    --accent: 195 100% 50%;           /* Neon blue accent */
+    --accent-foreground: 240 10% 4%;
+
+    /* Status Colors */
+    --destructive: 0 84% 60%;         /* Red for errors */
+    --destructive-foreground: 210 40% 98%;
+    
+    --success: 142 76% 36%;           /* Green for success */
+    --success-foreground: 210 40% 98%;
+    
+    --warning: 45 93% 47%;            /* Yellow for warnings */
+    --warning-foreground: 240 10% 4%;
+
+    /* UI Elements */
+    --border: 240 10% 12%;            /* Subtle borders */
+    --input: 240 10% 8%;              /* Input backgrounds */
+    --ring: 195 100% 50%;             /* Focus ring - neon blue */
+
+    /* Custom Neon Effects */
+    --neon-glow: 195 100% 50%;        /* Neon blue glow */
+    --glass-bg: 240 10% 6% / 0.8;     /* Glass effect background */
+    
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(195 100% 50%), hsl(195 100% 40%));
+    --gradient-dark: linear-gradient(135deg, hsl(240 10% 6%), hsl(240 10% 4%));
+    --gradient-glass: linear-gradient(135deg, hsl(240 10% 8% / 0.8), hsl(240 10% 6% / 0.6));
+
+    /* Shadows */
+    --shadow-neon: 0 0 8px hsl(195 100% 50% / 0.25);
+    --shadow-card: 0 4px 20px hsl(240 10% 2% / 0.5);
+    --shadow-elevated: 0 8px 30px hsl(240 10% 2% / 0.7);
+
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans;
+    min-height: 100vh;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+
+  /* Light theme background */
+  body {
+    background: linear-gradient(135deg, hsl(0 0% 100%), hsl(240 5% 96%));
+  }
+
+  /* Dark theme background */
+  .dark body {
+    background: linear-gradient(135deg, hsl(240 10% 4%), hsl(240 10% 6%));
+  }
+
+  /* Smooth transitions for theme changes */
+  * {
+    transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
+  }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-muted;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-border rounded-full;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-primary;
+  }
+
+  /* Theme-specific animations */
+  .animate-pulse-neon {
+    animation: pulse-neon 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+
+  @keyframes pulse-neon {
+    0%, 100% {
+      opacity: 1;
+      filter: drop-shadow(0 0 5px hsl(var(--neon-glow)));
+    }
+    50% {
+      opacity: 0.8;
+      filter: drop-shadow(0 0 10px hsl(var(--neon-glow)));
+    }
+  }
+
+  /* Inventory-specific animations */
+  .animate-fade-in {
+    animation: fadeIn 0.5s ease-in-out;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .animate-slide-in {
+    animation: slideIn 0.3s ease-out;
+  }
+
+  @keyframes slideIn {
+    from {
+      opacity: 0;
+      transform: translateX(-20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  .animate-scale-in {
+    animation: scaleIn 0.2s ease-out;
+  }
+
+  @keyframes scaleIn {
+    from {
+      opacity: 0;
+      transform: scale(0.95);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+  .animate-slide-down {
+    animation: slideDown 0.3s ease-out;
+  }
+
+  @keyframes slideDown {
+    from {
+      opacity: 0;
+      transform: translateY(-100%);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /* Hover effects for cards */
+  .card-hover {
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .card-hover:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-elevated);
+  }
+
+  /* Responsive utilities */
+  .responsive-grid {
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  }
+
+  @media (max-width: 640px) {
+    .responsive-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  @media (min-width: 641px) and (max-width: 1024px) {
+    .responsive-grid {
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    }
+  }
+
+  /* Image thumbnail styles */
+  .thumbnail-container {
+    position: relative;
+    overflow: hidden;
+    border-radius: 0.5rem;
+    background: linear-gradient(135deg, hsl(var(--muted)), hsl(var(--muted) / 0.8));
+  }
+
+  .thumbnail-container img {
+    transition: transform 0.3s ease;
+  }
+
+  .thumbnail-container:hover img {
+    transform: scale(1.05);
+  }
+
+  /* Profile card transitions */
+  .profile-collapse {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  .profile-expand {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  /* Smooth height transitions */
+  .height-transition {
+    transition: max-height 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  /* Loading skeleton animation */
+  .animate-skeleton {
+    animation: skeleton 1.5s ease-in-out infinite;
+  }
+
+  @keyframes skeleton {
+    0% {
+      background-position: -200px 0;
+    }
+    100% {
+      background-position: calc(200px + 100%) 0;
+    }
+  }
+
+  .skeleton {
+    background: linear-gradient(90deg, hsl(var(--muted)) 25%, hsl(var(--muted) / 0.5) 50%, hsl(var(--muted)) 75%);
+    background-size: 200px 100%;
+    animation: skeleton 1.5s ease-in-out infinite;
+  }
+
+  /* Hide number input spinners when explicitly opted-in */
+  .no-spin[type="number"]::-webkit-outer-spin-button,
+  .no-spin[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+  .no-spin[type="number"] {
+    -moz-appearance: textfield;
+  }
+}

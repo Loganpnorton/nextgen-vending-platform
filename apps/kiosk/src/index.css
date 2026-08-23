@@ -1,0 +1,117 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Design System - Dark neon kiosk theme
+   All colors use HSL numbers. Do not use raw hex values in components. */
+
+@layer base {
+  :root {
+    /* Light mode (unused by default, but kept for completeness) */
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+
+    --primary: 222.2 47.4% 11.2%;
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 222.2 84% 4.9%;
+
+    --radius: 0.75rem;
+
+    /* Sidebar (light) */
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    /* Canvas */
+    --background: 224 14% 9%;     /* deep charcoal */
+    --foreground: 210 20% 96%;    /* near-white */
+
+    /* Surfaces */
+    --card: 222 16% 12%;
+    --card-foreground: 210 20% 96%;
+    --popover: 222 16% 10%;
+    --popover-foreground: 210 20% 96%;
+
+    /* Brand - neon cyan + lime blend */
+    --brand: 188 100% 50%;         /* neon cyan */
+    --brand-2: 160 84% 45%;        /* neon lime */
+
+    --primary: var(--brand);
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 222 20% 18%;
+    --secondary-foreground: 210 20% 96%;
+
+    --muted: 222 20% 18%;
+    --muted-foreground: 215 20% 70%;
+
+    --accent: var(--brand-2);
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 220 8% 22%;
+    --input: 220 8% 22%;
+    --ring: var(--brand);
+
+    /* Sidebar (dark) */
+    --sidebar-background: 224 14% 9%;
+    --sidebar-foreground: 210 20% 96%;
+    --sidebar-primary: var(--brand);
+    --sidebar-primary-foreground: 0 0% 0%;
+    --sidebar-accent: 222 20% 18%;
+    --sidebar-accent-foreground: 210 20% 96%;
+    --sidebar-border: 220 8% 22%;
+    --sidebar-ring: var(--brand);
+
+    /* Extras */
+    --gradient-primary: radial-gradient(120% 120% at 0% 0%, hsl(var(--brand)) 0%, hsl(var(--brand-2)) 50%, hsl(var(--brand)) 100%);
+    --shadow-elegant: 0 12px 40px -12px hsl(var(--brand) / 0.35);
+    --shadow-glow: 0 0 48px hsl(var(--brand) / 0.35);
+    --transition-smooth: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+
+    /* Status */
+    --status-online: 152 84% 45%;
+    --status-offline: 0 84% 60%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-feature-settings: "ss01" on, "ss02" on;
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "name": "nextgen-vending-platform",
+  "private": true,
+  "version": "1.0.0",
+  "scripts": {
+    "dev:dashboard": "npm --prefix apps/dashboard run dev",
+    "dev:kiosk": "npm --prefix apps/kiosk run dev",
+    "lint": "npm run lint:dashboard && npm run lint:kiosk",
+    "lint:dashboard": "npm --prefix apps/dashboard run lint",
+    "lint:kiosk": "npm --prefix apps/kiosk run lint",
+    "build": "npm run build:dashboard && npm run build:kiosk",
+    "build:dashboard": "npm --prefix apps/dashboard run build",
+    "build:kiosk": "npm --prefix apps/kiosk run build"
+  }
+}
