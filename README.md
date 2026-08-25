@@ -4,6 +4,8 @@ A two-surface vending platform: an operations dashboard for fleet management and
 
 ![Kiosk authentication boundary](docs/kiosk-auth.png)
 
+[Watch the 75-second demo](docs/demo.mp4)
+
 ## What it demonstrates
 
 - A React + TypeScript operations console for machines, inventory, notifications, settings, and live status
