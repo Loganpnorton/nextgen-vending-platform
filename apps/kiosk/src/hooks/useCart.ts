@@ -1,29 +1,12 @@
 import { useState, useMemo } from 'react';
 import type { CartItem, MachineProduct } from '@/types/api';
+import { addCartItem, setCartQuantity } from '@/domain/kiosk';
 
 export function useCart() {
   const [items, setItems] = useState<CartItem[]>([]);
 
   const add = (product: MachineProduct) => {
-    setItems(prev => {
-      const existingIndex = prev.findIndex(item => item.id === product.id);
-      
-      if (existingIndex > -1) {
-        const updated = [...prev];
-        updated[existingIndex] = {
-          ...updated[existingIndex],
-          qty: updated[existingIndex].qty + 1,
-        };
-        return updated;
-      }
-      
-      return [...prev, {
-        id: product.id,
-        name: product.name,
-        price: product.price,
-        qty: 1,
-      }];
-    });
+    setItems(prev => addCartItem(prev, product));
   };
 
   const remove = (productId: string) => {
@@ -31,16 +14,7 @@ export function useCart() {
   };
 
   const updateQuantity = (productId: string, qty: number) => {
-    if (qty <= 0) {
-      remove(productId);
-      return;
-    }
-    
-    setItems(prev => 
-      prev.map(item => 
-        item.id === productId ? { ...item, qty } : item
-      )
-    );
+    setItems(prev => setCartQuantity(prev, productId, qty));
   };
 
   const clear = () => {

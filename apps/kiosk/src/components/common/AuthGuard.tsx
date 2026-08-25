@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { supabase } from '@/lib/supabase';
+import { authDestination } from '@/domain/kiosk';
 
 interface AuthGuardProps {
   children: React.ReactNode;
@@ -18,11 +19,8 @@ export function AuthGuard({ children, requireAuth = true }: AuthGuardProps) {
       const isAuth = !!session;
       setAuthenticated(isAuth);
 
-      if (requireAuth && !isAuth) {
-        navigate('/login');
-      } else if (!requireAuth && isAuth) {
-        navigate('/kiosk');
-      }
+      const destination = authDestination(requireAuth, isAuth);
+      if (destination) navigate(destination);
 
       setLoading(false);
     };
