@@ -2,6 +2,8 @@
 
 A two-surface vending platform: an operations dashboard for fleet management and a touch-oriented kiosk for customer checkout. This portfolio edition preserves the application architecture and database migrations while removing deployment identifiers, credentials, build artifacts, and repository history.
 
+![Kiosk authentication boundary](docs/kiosk-auth.png)
+
 ## What it demonstrates
 
 - A React + TypeScript operations console for machines, inventory, notifications, settings, and live status
@@ -54,10 +56,11 @@ Start either development server with `npm run dev:dashboard` or `npm run dev:kio
 
 ```sh
 npm run lint
+npm test
 npm run build
 ```
 
-CI runs lint and a production build for both applications. Backend services and vending hardware are not bundled, so interactive authentication and device actions require your own development environment.
+CI runs kiosk domain tests plus lint and production builds for both applications. The regression suite covers inventory transitions, oversell prevention, offline-sale recovery, authorization routing, and kiosk state transitions. Backend services and vending hardware are not bundled, so interactive authentication and device actions require your own development environment.
 
 ## Portfolio privacy boundary
 
@@ -66,3 +69,5 @@ This clone contains no production credentials, deployment identifiers, customer 
 ## Status
 
 Portfolio case study and buildable source snapshot. It is not presented as a hosted production service, and no license is granted by default.
+
+Use the synthetic 75-second walkthrough in [`docs/demo-script.md`](docs/demo-script.md) for a reviewer-safe demonstration without real machines, customer accounts, or production credentials.

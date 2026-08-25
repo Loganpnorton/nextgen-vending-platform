@@ -10,6 +10,7 @@
     "lint:kiosk": "npm --prefix apps/kiosk run lint",
     "build": "npm run build:dashboard && npm run build:kiosk",
     "build:dashboard": "npm --prefix apps/dashboard run build",
-    "build:kiosk": "npm --prefix apps/kiosk run build"
+    "build:kiosk": "npm --prefix apps/kiosk run build",
+    "test": "npm --prefix apps/kiosk test"
   }
 }
